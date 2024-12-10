@@ -16,7 +16,7 @@ public class Main {
 
         // sort by name length
         myFriends.sort((a,b) -> {
-            return a.getName().length() - b.getName().length();
+            return a.getFullName().length() - b.getFullName().length();
         });
         // sort by age
 //        myFriends.sort((a,b) -> {

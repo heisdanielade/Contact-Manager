@@ -1,6 +1,6 @@
 public class Friend {
     private String id;
-    private String name;
+    private String fullName;
     private int age;
     private String gender;
 
@@ -12,7 +12,7 @@ public class Friend {
         // the friend id is defined: # plus the reversed form of the friend name + a random 4-digit number
 
         if (name == null || name.isEmpty()) {
-            String originalName = this.getName();
+            String originalName = this.getFullName();
             StringBuilder reversedName = new StringBuilder();
             int randomNumber = 1000 +  (int)(Math.random() * 8999);
             for (int i = 0; i<originalName.length(); i++){
@@ -23,12 +23,10 @@ public class Friend {
         } else {
             this.id = "Unknown";
         }
-
-
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
     public int getAge() {
@@ -39,8 +37,8 @@ public class Friend {
         this.age = age;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getGender() {
@@ -52,13 +50,13 @@ public class Friend {
     }
 
     public Friend(String name, int age, String gender) {
-        this.name = name;
+        this.fullName = name;
         this.age = age;
         this.gender = gender;
     }
 
     public String toString() {
-        return String.format("[%s] %s (%d years) - %s", this.getId(), this.getName(), this.getAge(), this.getGender());
+        return String.format("[%s] %s (%d years) - %s", this.getId(), this.getFullName(), this.getAge(), this.getGender());
     }
 
 }
