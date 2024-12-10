@@ -9,8 +9,8 @@ public class Main {
 
 
         ArrayList<Friend> myFriends = new ArrayList<>();
-        Friend f1 = new Friend("Samuel", 24, "male");
-        Friend f2 = new Friend("Lena", 25, "female");
+        Friend f1 = new Friend("Robert", 22, "male");
+        Friend f2 = new Friend("Julia", 23, "female");
         myFriends.add(f1);
         myFriends.add(f2);
 
