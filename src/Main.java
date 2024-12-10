@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-//        System.out.println("=> What is your name?");
+//        System.out.println("=> Enter your name?");
 //        String userName = "Daniel"; // new Scanner(System.in).nextLine();
 //        System.out.println("\n(i) Witaj " + userName);
 
