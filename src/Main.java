@@ -9,8 +9,8 @@ public class Main {
 
 
         ArrayList<Friend> myFriends = new ArrayList<>();
-        Friend f1 = new Friend("Robert", 22, "male");
-        Friend f2 = new Friend("Julia", 23, "female");
+        Friend f1 = new Friend("Robert L.", 22, "male");
+        Friend f2 = new Friend("Julia N.", 23, "female");
         myFriends.add(f1);
         myFriends.add(f2);
 
@@ -22,7 +22,7 @@ public class Main {
 //        myFriends.sort((a,b) -> {
 //            return Integer.compare(a.getAge(),b.getAge());
 //        });
-        System.out.println(String.format("Number of Friends: %d", myFriends.size()));
+        System.out.printf("Number of Friends: %d\n", myFriends.size());
         System.out.println("FRIENDS:");
 
         for (int i = 0; i < myFriends.size(); i++) {
