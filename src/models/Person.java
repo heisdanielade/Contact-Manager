@@ -1,15 +1,26 @@
-public class Friend {
+package models;
+
+import java.time.LocalDate;
+
+public class Person {
     private String id;
     private String fullName;
     private int age;
     private String gender;
+    private LocalDate dateOfBirth;
+
+    public Person(String name, int age, String gender) {
+        this.fullName = name;
+        this.age = age;
+        this.gender = gender;
+    }
 
     public String getId() {
         return id;
     }
 
     public void setId(String name) {
-        // the friend id is defined: # plus the reversed form of the friend name + a random 4-digit number
+        // the person id is defined: # plus the reversed form of the friend name + a random 4-digit number
 
         if (name == null || name.isEmpty()) {
             String originalName = this.getFullName();
@@ -49,11 +60,6 @@ public class Friend {
         this.gender = gender;
     }
 
-    public Friend(String name, int age, String gender) {
-        this.fullName = name;
-        this.age = age;
-        this.gender = gender;
-    }
 
     public String toString() {
         return String.format("[%s] %s (%d years) - %s", this.getId(), this.getFullName(), this.getAge(), this.getGender());
