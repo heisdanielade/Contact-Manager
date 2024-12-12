@@ -21,18 +21,22 @@ public class Person {
 
     public void setId(String name) {
         // the person id is defined: # plus the reversed form of the friend name + a random 4-digit number
-
-        if (name == null || name.isEmpty()) {
-            String originalName = this.getFullName();
-            StringBuilder reversedName = new StringBuilder();
-            int randomNumber = 1000 +  (int)(Math.random() * 8999);
-            for (int i = 0; i<originalName.length(); i++){
-                reversedName.insert(0, originalName.charAt(i));
-                // or reversedName = originalName.charAt(i) + reversedName;
+        try {
+            if (name == null || name.isEmpty()) {
+                String originalName = this.getFullName();
+                StringBuilder reversedName = new StringBuilder();
+                int randomNumber = 1000 +  (int)(Math.random() * 8999);
+                for (int i = 0; i<originalName.length(); i++){
+                    reversedName.insert(0, originalName.charAt(i));
+                    // or reversedName = originalName.charAt(i) + reversedName;
+                }
+                this.id =  "#" + reversedName + randomNumber;
+            } else {
+                this.id = "Unknown";
             }
-            this.id =  "#" + reversedName + randomNumber;
-        } else {
-            this.id = "Unknown";
+        } catch (Exception e) {
+            this.id = "#";
+            System.out.printf("\n(e) %s", e.getMessage());
         }
     }
 
