@@ -1,72 +1,65 @@
 package models;
-
+import enums.Gender;
 import java.time.LocalDate;
 
 public class Person {
-    private String id;
+    private int id;
     private String fullName;
-    private int age;
-    private String gender;
+    private Gender gender;
     private LocalDate dateOfBirth;
 
-    public Person(String name, int age, String gender) {
+    public Person(String name, Gender gender, LocalDate dateOfBirth) {
         this.fullName = name;
-        this.age = age;
         this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.setId(id);
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String name) {
-        // the person id is defined: # plus the reversed form of the friend name + a random 4-digit number
+    private void setId(int id) {
         try {
-            if (name == null || name.isEmpty()) {
-                String originalName = this.getFullName();
-                StringBuilder reversedName = new StringBuilder();
-                int randomNumber = 1000 +  (int)(Math.random() * 8999);
-                for (int i = 0; i<originalName.length(); i++){
-                    reversedName.insert(0, originalName.charAt(i));
-                    // or reversedName = originalName.charAt(i) + reversedName;
-                }
-                this.id =  "#" + reversedName + randomNumber;
-            } else {
-                this.id = "Unknown";
-            }
+            id = (int) (1000 + (Math.random() * 8999));
         } catch (Exception e) {
-            this.id = "#";
             System.out.printf("\n(e) %s", e.getMessage());
         }
+        this.id = id;
     }
 
     public String getFullName() {
         return fullName;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
-    public String getGender() {
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
+        String formattedGender = gender.toString().toLowerCase();
         this.gender = gender;
     }
 
+    // Get person's age from date of birth
+    public int getAge() {
+        return LocalDate.now().getYear() - this.dateOfBirth.getYear();
+    }
 
     public String toString() {
-        return String.format("[%s] %s (%d years) - %s", this.getId(), this.getFullName(), this.getAge(), this.getGender());
+        return String.format("%s (%d years) - %s", this.getFullName(), this.getAge(), this.getGender());
     }
 
 }
