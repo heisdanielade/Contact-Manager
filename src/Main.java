@@ -2,6 +2,8 @@ import enums.Relation;
 import models.Person;
 import enums.Gender;
 import models.Relative;
+
+import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -40,5 +42,29 @@ public class Main {
         for (Map.Entry<Integer, Person> p : myPeople.entrySet()) {
             System.out.println("ID-" + p.getKey() + ": " + p.getValue().toString());
         }
+
+//      Writing to a file
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+            writer.write("Hello World!");
+            writer.newLine();
+            writer.write("This is a new line.");
+            writer.close();
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+        // Reading a file
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+//            System.out.println("-> FILE CONTENT: " + reader.readLine()); // read a single line
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+        } catch (IOException e){
+            e.getStackTrace();
+        }
+
     }
 }
