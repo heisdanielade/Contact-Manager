@@ -44,27 +44,24 @@ public class Main {
         }
 
 //      Writing to a file
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))){
             writer.write("Hello World!");
             writer.newLine();
             writer.write("This is a new line.");
-            writer.close();
         } catch (Exception e) {
             e.getStackTrace();
         }
         // Reading a file
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+        try (BufferedReader reader = new BufferedReader(new FileReader("output.txt"))){ // using try-with: I don't have to call close()
 //            System.out.println("-> FILE CONTENT: " + reader.readLine()); // read a single line
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
-            reader.close();
         } catch (IOException e){
             e.getStackTrace();
         }
+
 
     }
 }
