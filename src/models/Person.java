@@ -4,36 +4,32 @@ import java.time.LocalDate;
 
 public class Person {
     private int id;
-    private String fullName;
+    private String first_name;
+    private String last_name;
     private Gender gender;
     private LocalDate dateOfBirth;
 
-    public Person(String name, Gender gender, LocalDate dateOfBirth) {
-        this.fullName = name;
+    public Person(String first_name, String last_name, Gender gender, LocalDate dateOfBirth) {
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
-        this.setId(id);
     }
 
-    public int getId() {
-        return id;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    private void setId(int id) {
-        try {
-            id = (int) (1000 + (Math.random() * 8999));
-        } catch (Exception e) {
-            System.out.printf("\n(e) %s", e.getMessage());
-        }
-        this.id = id;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public LocalDate getDateOfBirth() {
@@ -59,7 +55,7 @@ public class Person {
     }
 
     public String toString() {
-        return String.format("%s (%d years) - %s", this.getFullName(), this.getAge(), this.getGender());
+        return String.format("%s %s (%d years) - %s", this.getFirst_name(), this.getLast_name() , this.getAge(), this.getGender());
     }
 
 }

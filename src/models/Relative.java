@@ -25,7 +25,7 @@ public class Relative extends Person {
         this.relationship = relationship;
     }
 
-    public Relative(Relation relationship, boolean livesWithMe, String name, Gender gender, LocalDate dateOfBirth) {
-        super(name, gender, dateOfBirth);
+    public Relative(Relation relationship, boolean livesWithMe, String first_name, String last_name, Gender gender, LocalDate dateOfBirth) {
+        super(first_name, last_name, gender, dateOfBirth);
     }
 }
