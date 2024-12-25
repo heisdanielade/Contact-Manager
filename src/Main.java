@@ -26,33 +26,37 @@ public class Main {
         people.sort((a,b) -> {
             return Integer.compare(a.getAge(), b.getAge());
         });
-        System.out.printf("Number of Friends: %d\n", people.size());
-        System.out.println("FRIENDS:");
+//        System.out.printf("Number of Friends: %d\n", people.size());
+//        System.out.println("FRIENDS:");
 
         // print list of friends with an index
-        for (int i = 0; i < people.size(); i++) {
-            Person f = people.get(i);
-            System.out.println((i + 1) + ". " + f.toString());
-        }
+//        for (int i = 0; i < people.size(); i++) {
+//            Person f = people.get(i);
+//            System.out.println((i + 1) + ". " + f.toString());
+//        }
         // Testing HashMap
-        HashMap<Integer, Person> myPeople = new HashMap<>();
-        myPeople.put(p1.getId(), p1);
-        myPeople.put(p2.getId(), p2);
-        myPeople.put(p3.getId(), p3);
+//        HashMap<Integer, Person> myPeople = new HashMap<>();
+//        myPeople.put(p1.getId(), p1);
+//        myPeople.put(p2.getId(), p2);
+//        myPeople.put(p3.getId(), p3);
 
 //      Writing to a file
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileActions.getFileName()))){
-            for (Map.Entry<Integer, Person> p : myPeople.entrySet()) {
-                writer.write(p.getKey() + ": " + p.getValue().toString());
-                writer.newLine();
-            }
-        } catch (Exception e) {
-            e.getStackTrace();
-        }
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileActions.getFileName()))){
+//            for (Map.Entry<Integer, Person> p : myPeople.entrySet()) {
+//                writer.write(p.getKey() + ": " + p.getValue().toString());
+//                writer.newLine();
+//            }
+//        } catch (Exception e) {
+//            e.getStackTrace();
+//        }
 
 
         // read from file
-        System.out.println("\nFRIENDS:");
-        fileActions.read();
+//        System.out.println("\nFRIENDS:");
+//        fileActions.read();
+
+        // connect to database
+        Database.connect();
     }
+
 }
