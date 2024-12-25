@@ -1,4 +1,5 @@
 import enums.Relation;
+import fileActions.fileActions;
 import models.Person;
 import enums.Gender;
 import models.Relative;
@@ -38,30 +39,21 @@ public class Main {
         myPeople.put(p1.getId(), p1);
         myPeople.put(p2.getId(), p2);
         myPeople.put(p3.getId(), p3);
-        System.out.println("\nFRIENDS:");
-        for (Map.Entry<Integer, Person> p : myPeople.entrySet()) {
-            System.out.println("ID-" + p.getKey() + ": " + p.getValue().toString());
-        }
+
 
 //      Writing to a file
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"))){
-            writer.write("Hello World!");
-            writer.newLine();
-            writer.write("This is a new line.");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileActions.getFileName()))){
+            for (Map.Entry<Integer, Person> p : myPeople.entrySet()) {
+                writer.write(p.getKey() + ": " + p.getValue().toString());
+                writer.newLine();
+            }
         } catch (Exception e) {
             e.getStackTrace();
         }
-        // Reading a file
-        try (BufferedReader reader = new BufferedReader(new FileReader("output.txt"))){ // using try-with: I don't have to call close()
-//            System.out.println("-> FILE CONTENT: " + reader.readLine()); // read a single line
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-        } catch (IOException e){
-            e.getStackTrace();
-        }
 
 
+        // read from file
+        System.out.println("\nFRIENDS:");
+        fileActions.read();
     }
 }
