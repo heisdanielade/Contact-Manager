@@ -1,5 +1,7 @@
 package models;
+
 import enums.Gender;
+
 import java.time.LocalDate;
 
 public class Person {
@@ -55,7 +57,7 @@ public class Person {
     }
 
     public String toString() {
-        return String.format("%s %s (%d years) - %s", this.getFirst_name(), this.getLast_name() , this.getAge(), this.getGender());
+        return String.format("%s %s (%d years) - %s", this.getFirst_name(), this.getLast_name(), this.getAge(), this.getGender());
     }
 
 }
