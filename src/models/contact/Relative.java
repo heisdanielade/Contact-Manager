@@ -1,7 +1,4 @@
-package models;
-
-import enums.Gender;
-import enums.Relation;
+package models.contact;
 
 import java.time.LocalDate;
 
