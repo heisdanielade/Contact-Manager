@@ -4,14 +4,14 @@ import enums.Gender;
 
 import java.time.LocalDate;
 
-public class Person {
+public class Contact {
     private int id;
     private String first_name;
     private String last_name;
     private Gender gender;
     private LocalDate dateOfBirth;
 
-    public Person(String first_name, String last_name, Gender gender, LocalDate dateOfBirth) {
+    public Contact(String first_name, String last_name, Gender gender, LocalDate dateOfBirth) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.gender = gender;

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Database {
-    private static final String URL = "jdbc:sqlite:friends.db";
+    private static final String URL = "jdbc:sqlite:contact.db";
 
     public static void connect() {
         try (Connection conn = DriverManager.getConnection(URL)) {

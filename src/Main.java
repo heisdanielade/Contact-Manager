@@ -1,6 +1,6 @@
-import db.Database;
 import enums.Relation;
-import models.Person;
+import gui.AppFrame;
+import models.Contact;
 import enums.Gender;
 import models.Relative;
 
@@ -10,10 +10,10 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Person> people = new ArrayList<>();
-        Person p1 = new Person("Robert", "Lewandowski", Gender.MALE, LocalDate.of(2005, 4, 18));
-        Person p2 = new Person("Julia", "Nowak", Gender.FEMALE, LocalDate.of(2003, 8, 13));
-        Person p3 = new Relative(Relation.CHILD, true, "Tony", "Hoffman", Gender.MALE, LocalDate.of(2019, 10, 9));
+        ArrayList<Contact> people = new ArrayList<>();
+        Contact p1 = new Contact("Robert", "Lewandowski", Gender.MALE, LocalDate.of(2005, 4, 18));
+        Contact p2 = new Contact("Julia", "Nowak", Gender.FEMALE, LocalDate.of(2003, 8, 13));
+        Contact p3 = new Relative(Relation.CHILD, true, "Tony", "Hoffman", Gender.MALE, LocalDate.of(2019, 10, 9));
         people.add(p1);
         people.add(p2);
         people.add(p3);
@@ -55,8 +55,13 @@ public class Main {
 //        System.out.println("\nFRIENDS:");
 //        fileActions.read();
 
+        // GUI Interface
+        new AppFrame(); // entry frame to application
+
+
+
         // connect to database
-        Database.connect();
+//        Database.connect();
     }
 
 }

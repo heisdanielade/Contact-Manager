@@ -5,7 +5,7 @@ import enums.Relation;
 
 import java.time.LocalDate;
 
-public class Relative extends Person {
+public class Relative extends Contact {
     private Relation relationship; // i.e.Parent, Sibling, inlaw, chils
     private boolean livesWithMe;
 

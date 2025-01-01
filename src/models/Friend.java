@@ -4,7 +4,7 @@ import enums.Gender;
 
 import java.time.LocalDate;
 
-public class Friend extends Person {
+public class Friend extends Contact {
 
     private String relationshipStrength; // i.e. Close friend, Friend, acquaintance,
     public Friend(String first_name, String last_name, Gender gender, LocalDate dateOfBirth) {
