@@ -10,11 +10,7 @@ public class Main {
 
         ArrayList<Contact> people = new ArrayList<>();
         Contact p1 = new Contact("Robert", "Lewandowski", Gender.MALE, LocalDate.of(2005, 4, 18));
-        Contact p2 = new Contact("Julia", "Nowak", Gender.FEMALE, LocalDate.of(2003, 8, 13));
-        Contact p3 = new Relative(Relation.CHILD, true, "Tony", "Hoffman", Gender.MALE, LocalDate.of(2019, 10, 9));
         people.add(p1);
-        people.add(p2);
-        people.add(p3);
         // sort people by name length
 //        people.sort((a,b) -> {
 //            return a.getFullName().length() - b.getFullName().length();
@@ -35,7 +31,6 @@ public class Main {
 //        HashMap<Integer, Person> myPeople = new HashMap<>();
 //        myPeople.put(p1.getId(), p1);
 //        myPeople.put(p2.getId(), p2);
-//        myPeople.put(p3.getId(), p3);
 
 
 //      Writing to a file

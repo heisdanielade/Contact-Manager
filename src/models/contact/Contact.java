@@ -89,8 +89,13 @@ public class Contact {
         return LocalDate.now().getYear() - this.dateOfBirth.getYear();
     }
 
+    @Override
     public String toString() {
-        return String.format("%s %s (%d years) - %s", this.getFirst_name(), this.getLast_name(), this.getAge(), this.getGender());
+        return String.format("Contact: %s %s (%s)\nEmail: %s\nPhone: %s\nGender: %s\nDate of Birth: %s\nRelative: %s",
+                first_name, last_name, nickname, email, phone, gender,
+                dateOfBirth != null ? dateOfBirth.toString() : "N/A",
+                isRelative ? "Yes" : "No");
     }
+
 
 }

@@ -4,6 +4,7 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private String nickname;
 
     public User(String username, String email, String password){
         this.username = username;
@@ -31,4 +32,20 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("User: %s (ID: -d)\nEmail: %s\nNickname: %s",
+                username, email, nickname);
+    }
+
+
 }
