@@ -1,5 +1,7 @@
 package models.contact;
 
+import models.contact.enums.Gender;
+
 import java.time.LocalDate;
 
 public class Friend extends Contact {

@@ -1,5 +1,8 @@
 package models.contact;
 
+import models.contact.enums.Gender;
+import models.contact.enums.Relation;
+
 import java.time.LocalDate;
 
 public class Relative extends Contact {

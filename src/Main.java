@@ -1,7 +1,7 @@
-import models.contact.Relation;
+import models.contact.enums.Relation;
 import gui.AppFrame;
 import models.contact.Contact;
-import models.contact.Gender;
+import models.contact.enums.Gender;
 import models.contact.Relative;
 
 import java.time.LocalDate;
