@@ -12,6 +12,7 @@ public class Contact {
     private String phone;
     private Gender gender;
     private LocalDate dateOfBirth;
+    private boolean isRelative;
 
 
     public Contact(String first_name, String last_name, Gender gender, LocalDate dateOfBirth) {
@@ -72,8 +73,15 @@ public class Contact {
     }
 
     public void setGender(Gender gender) {
-        String formattedGender = gender.toString().toLowerCase();
         this.gender = gender;
+    }
+
+    public boolean isRelative() {
+        return isRelative;
+    }
+
+    public void setRelative(boolean relative) {
+        isRelative = relative;
     }
 
     // Get person's age from date of birth
